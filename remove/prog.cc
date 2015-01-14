@@ -5,6 +5,17 @@
 
 using namespace std;
 
+template <typename T>
+void print_elements(const T& t, const char* sep = " ")
+{
+    typename T::const_iterator pos;
+
+    for (pos = t.begin(); pos != t.end(); ++pos) {
+        cout << *pos << sep;
+    }
+    cout << endl;
+}
+
 int main(int argc, char* argv[])
 {
     cout << "hello world!" << endl;
@@ -32,6 +43,8 @@ int main(int argc, char* argv[])
     copy(col1.begin(), col1.end(), ostream_iterator<int>(cout, " "));
     cout << endl;
     cout << "size = " << col1.size() << endl;
+
+    print_elements(col1);
 
     return 0;
 }
