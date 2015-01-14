@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <deque>
 #include <set>
+#include <string>
+#include <iterator>
 
 using namespace std;
 
@@ -39,6 +41,13 @@ int main(int argc, char* argv[])
         cout << *col4_itr << ' ';
     }
     cout << endl;
+
+    vector<int> col5;
+    copy(istream_iterator<int>(cin), istream_iterator<int>(), back_inserter(col5));
+
+    sort(col5.begin(), col5.end());
+
+    unique_copy(col5.begin(), col5.end(), ostream_iterator<int>(cout, "\n"));
 
     return 0;
 }
