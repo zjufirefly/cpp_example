@@ -4,6 +4,8 @@
 #include <list>
 #include <set>
 #include <map>
+#include <algorithm>
+#include <functional>
 
 using namespace std;
 
@@ -17,6 +19,16 @@ int main(int argc, char* argv[])
         col1.push_back(i);
     }
 
+    for (int i = 0; i < col1.size(); ++i) {
+        cout << col1[i] << ' ';
+    }
+    cout << endl;
+
+    vector<int>::iterator pos_vec;
+    pos_vec = min_element(col1.begin(), col1.end());
+    cout << "min:" << *pos_vec << endl;
+
+    sort(col1.begin(), col1.end(), greater<int>());
     for (int i = 0; i < col1.size(); ++i) {
         cout << col1[i] << ' ';
     }
