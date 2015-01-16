@@ -4,8 +4,35 @@
 
 using namespace std;
 
+class student{
+    public:
+        int num;
+        void setnum(int num) const{
+        }
+};
+
+bool operator< (const student& s1, const student& s2) {
+    return s1.num < s2.num;
+}
+
 int main(int argc, char* argv[])
 {
+    set<student> ss;
+    student s1;
+    s1.num =1;
+    student s2;
+    s2.num = 2;
+    ss.insert(s1);
+    ss.insert(s2);
+
+
+    set<student>::iterator spos;
+    spos = ss.begin();
+    spos->setnum(3);
+    for (spos = ss.begin(); spos != ss.end(); ++spos) {
+        cout << spos->num << endl;
+    }
+
     cout << "hello world!" << endl;
 
     typedef multiset<int> IntSet;

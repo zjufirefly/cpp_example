@@ -5,8 +5,6 @@
 
 using namespace std;
 
-
-
 template <typename T>
 void print_elements(const T& t, const char* sep = " ")
 {
